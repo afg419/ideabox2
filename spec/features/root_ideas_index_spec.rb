@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "A user sees ideas", type: :feature do
-  scenario "Visits root path and behold!" do
+  scenario "Visits root path and behold!", js: true do
     make_ideas(3)
     visit root_path
 
