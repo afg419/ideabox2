@@ -26,6 +26,12 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+def make_ideas(n)
+  n.times do |i|
+    Idea.create(title: "title#{i}", body: "body#{i}", quality: i%3)
+  end
+end
+
 RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
